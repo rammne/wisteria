@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    /* background-color: #2C2E4A; */
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(44, 46, 74, 1) 0%, rgba(89, 89, 158, 1) 40%, rgba(93, 93, 222, 1) 80%);
+}
+
+/* side navigation */
+
+aside {
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(44, 46, 74, 1) 0%, rgba(89, 89, 158, 1) 40%, rgba(93, 93, 222, 1) 80%);
+    position: fixed;
+    width: 5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+aside div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    gap: 4px;
+    text-align: center;
+}
+
+aside div a {
+    padding: 4px;
+    transition: background-color 0.3s linear;
+    border-radius: 6px;
+}
+
+aside div a:hover {
+    background-color: #171833;
+}
+
+aside h1 img {
+    width: 60px;
+    height: 70px;
+}
+
+aside div a img {
+    width: 50px;
+    height: 50px;
+}
+
+/* modal */
+
+#post-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* main section */
+
+main {
+    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* content header */
+
+main h1 {
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0; 
+}
+
+/* content section */
+
+main #content-section {
+    margin-top: 4rem;
+    position: fixed;
+    border-radius: 1rem;
+    min-width: 50%;
+    overflow: auto;
+    max-width: 800px;
+    background: linear-gradient(180deg, rgba(44, 46, 74, 1) 0%, rgb(102, 102, 182) 10%, rgba(93, 93, 222, 1) 100%);
+    height: 110vh;
+}
+
+main #content-section .section__content-section {
+    margin-top: 2rem;
+    height: auto;
+    padding: 1rem .5rem;
+    border-bottom: 1px solid black;
+}
