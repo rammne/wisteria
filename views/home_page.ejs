@@ -20,23 +20,34 @@
     </aside>
     <main>
         <div id="post-modal">
-            <div id="modal-content">
-                <form action="/submit-post" method="post" id="post-form">
+            <form action="/submit-post" method="post" id="post-form">
+                <div id="modal-content">
+                    <h1>New Post</h1>
                     <textarea name="post" id="post" placeholder="What's on your mind..."></textarea>
-                    <button id="close-modal" class="modal-btn">Cancel</button>
-                    <input type="submit" value="Post" id="post-content" class="modal-btn">
-                </form>
-            </div>
+                    <div id="modal-btns">
+                        <button id="close-modal-btn" class="modal-btn">Cancel</button>
+                        <input type="submit" value="Post" id="post-content-btn" class="modal-btn">
+                    </div>
+                </div>
+            </form>
         </div>
         <section id="content-section">
-            <h1 id="content-header">Posts for today</h1>
-            <% posts.forEach(post=> { %>
-                <article class="section__content-section">
-                    <p class="content">
-                        <%= post.value %>
-                    </p>
-                </article>
-                <% }); %>
+            <% if (posts.length !==0) {%>
+                <h1 id="content-header">Posts for today</h1>
+                <% } else {%>
+                    <h1 id="no-post-msg">There are no posts today.</h1>
+                    <% } %>
+                        <% posts.forEach(post=> { %>
+                            <article class="section__content-section">
+                                <p class="content">
+                                    <%= post.value %>
+                                </p>
+                                <div class="post-actions">
+                                    <button class="like-btn">Like</button>
+                                    <button class="comment-btn">Comment</button>
+                                </div>
+                            </article>
+                            <% }); %>
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
